@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-800 dark:bg-gray-900 text-gray-100">
+    <div class="w-full max-w-screen-lg p-4 mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <% users.forEach(user=> { %>
+                <div
+                    class="bg-gray-700 rounded-lg shadow-md overflow-hidden animate-fade-in transform transition duration-300 hover:scale-105">
+                    <div class="p-6">
+                        <img src="<%= user.image %>" alt="Event Image" class="w-full h-48 object-cover mb-4 rounded-md">
+                        <h2 class="text-2xl font-bold mb-2">
+                            <%= user.name %>
+                        </h2>
+                        <h6 class="text-xl font-semibold mb-2">
+                            <%= user.date %>
+                        </h6>
+                        <p class="text-base mb-4">
+                            <%= user.detail %>
+                        </p>
+                        <a href="/delete/<%=user._id%>"
+                            class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 transition duration-300 ease-in-out">Delete</a>
+
+                            <a href="/edit/<%=user._id%>"
+                                class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 transition duration-300 ease-in-out">Edit</a>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+        <div class="mt-6 text-center">
+            <a href="/"
+                class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 transition duration-300 ease-in-out">Home
+                Page</a>
+        </div>
+    </div>
+</body>
+
+</html>
