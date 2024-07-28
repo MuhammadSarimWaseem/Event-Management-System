@@ -1,9 +1,10 @@
 const express = require('express')
 const path = require('path')
 const userModel = require('./models/user')
+const dotenv = require("dotenv")
+dotenv.config();
 
 const app = express()
-const PORT = 8000
 
 app.set('view engine', 'ejs');
 app.set("views", path.resolve('./Views'))
@@ -51,4 +52,4 @@ app.post('/create', async (req, res) => {
     res.redirect('/event')
 })
 
-app.listen(PORT, () => { console.log("server connected", PORT) })
+app.listen(process.env.PORT, () => { console.log("server connected", process.env.PORT) })

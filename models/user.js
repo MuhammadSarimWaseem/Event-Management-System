@@ -5,7 +5,7 @@ require('dotenv').config();
 mongoose.connect(process.env.DATABASE_URL)
     .then(() => { console.log("mongo connected") })
     .catch(() => { console.log("Connection error") })
-    console.log("Database URL:", process.env.DATABASE_URL);
+console.log("Database URL:", process.env.DATABASE_URL);
 
 //schema
 
