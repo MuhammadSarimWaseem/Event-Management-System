@@ -8,5 +8,16 @@
     "express": "^4.19.2",
     "mongoose": "^8.4.4",
     "nodemon": "^3.1.4"
+  },
+  "name": "event-management-system",
+  "description": "A comprehensive event management system designed for efficient note-saving and management. Developed using Node.js, MongoDB, and Express with a dynamic EJS frontend for a seamless user experience.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "18.x"
   }
 }
