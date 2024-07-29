@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 //routes
 
 app.get('/', (req, res) => {
-    return res.render('home')
+     res.render('home')
 })
 
 app.get('/event', async (req, res) => {
