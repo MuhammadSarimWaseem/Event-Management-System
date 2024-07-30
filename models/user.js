@@ -1,36 +1,53 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 require('dotenv').config();
 
+// Connect to MongoDB
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+})
+.then(() => {
+    console.log("MongoDB connected");
+})
+.catch((error) => {
+    console.error("Connection error:", error);
+});
 
-mongoose.connect(process.env.DATABASE_URL)
-    .then(() => { console.log("mongo connected") })
-    .catch(() => { console.log("Connection error") })
 console.log("Database URL:", process.env.DATABASE_URL);
 
-//schema
-
+// Schema definition
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        trim: true,  // Trims whitespace from the beginning and end
     },
     image: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     },
     date: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     },
     detail: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     }
-})
+}, {
+    timestamps: true  // Adds createdAt and updatedAt timestamps
+});
 
+// Create indexes on frequently queried fields
+userSchema.index({ name: 1 });
+userSchema.index({ date: 1 });
 
-// model
-const userModel = new mongoose.model("user", userSchema)
+// Model
+const userModel = mongoose.model('User', userSchema);
 
-
-module.exports = userModel
+module.exports = userModel;
