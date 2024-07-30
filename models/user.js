@@ -1,20 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 require('dotenv').config();
 
-mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-    .then(() => {
-        console.log("MongoDB connected");
-    })
-    .catch((err) => {
-        console.error("Connection error:", err);
-    });
 
+mongoose.connect(process.env.DATABASE_URL)
+    .then(() => { console.log("mongo connected") })
+    .catch(() => { console.log("Connection error") })
 console.log("Database URL:", process.env.DATABASE_URL);
 
-// Schema
+//schema
+
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -32,9 +26,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-});
+})
 
-// Model
-const userModel = mongoose.model("user", userSchema);
 
-module.exports = userModel;
+// model
+const userModel = new mongoose.model("user", userSchema)
+
+
+module.exports = userModel
