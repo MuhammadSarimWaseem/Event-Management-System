@@ -7,7 +7,7 @@ dotenv.config();
 const app = express()
 
 app.set('view engine', 'ejs');
-app.set("views", path.resolve('./Views'))
+app.set("views", path.resolve('./views'))
 
 // Middleware to parse JSON bodies
 app.use(express.urlencoded({ extended: false }));
