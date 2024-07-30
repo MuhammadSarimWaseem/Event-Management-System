@@ -43,13 +43,14 @@ app.post('/update/:id', async (req, res) => {
 })
 
 app.post('/create', async (req, res) => {
-    let { name, image, date, detail } = req.body
-
-    let createdEvent = await userModel.create({
-        name, image, date, detail
-
-    })
-    res.redirect('/event')
+    const { name, image, date, detail } = req.body;
+    try {
+        await userModel.create({ name, image, date, detail });
+        res.redirect('/event');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
 })
 
 app.listen(process.env.PORT, () => { console.log("server connected", process.env.PORT) })
