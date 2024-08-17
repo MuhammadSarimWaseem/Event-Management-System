@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URL, {
   .catch(err => console.log(err));
 
 app.set('view engine', 'ejs');
-app.set("views", path.resolve('./views'));
+app.set("views", path.resolve('views'));
 
 // Middleware to parse JSON bodies
 app.use(express.urlencoded({ extended: false }));
