@@ -15,9 +15,13 @@
         "POST",
         "PUT",
         "PATCH",
-        "DELETE",
-        "OPTIONS"
+        "DELETE"
       ]
     }
-  ]
+  ],
+  "functions": {
+    "index.js": {
+      "maxDuration": 60
+    }
+  }
 }
