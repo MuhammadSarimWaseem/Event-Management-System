@@ -8,11 +8,6 @@ dotenv.config();
 
 const app = express();
 
-// MongoDB Connection
-mongoose.connect("mongodb+srv://event:abc123%21%40%23@mern.apcob.mongodb.net/?retryWrites=true&w=majority&appName=MERN", {
-}).then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
-
 app.set('view engine', 'ejs');
 app.set("views", path.resolve('views'));
 
