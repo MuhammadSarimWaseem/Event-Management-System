@@ -51,23 +51,26 @@
     class="bg-gray-900 text-gray-200 flex flex-col justify-center items-center min-h-screen transition duration-500 ease-in-out">
 
     <div class="flex justify-center items-center w-full mb-10">
-        <h1 class="text-5xl font-extrabold text-gray-100 animate-pulse">Event Management System</h1>
+        <h1 class="text-2xl md:text-5xl font-extrabold text-gray-100 animate-pulse">Event Management System</h1>
     </div>
+
     <div class="main w-full flex flex-wrap justify-center items-center p-4">
         <form action="/create" method="post"
-            class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-lg transform hover:scale-105 transition duration-300 ease-in-out animate-fade-in">
+            class="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-md lg:max-w-lg transform hover:scale-105 transition duration-300 ease-in-out animate-fade-in">
             <input type="text" name="name" placeholder="Enter event name"
-                class="w-full p-4 mb-4 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-gray-600 transition duration-300 ease-in-out animate-bounce-in">
+                class="w-full p-3 sm:p-4 mb-4 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-gray-600 transition duration-300 ease-in-out animate-bounce-in">
             <input type="text" name="image" placeholder="Enter event image"
-                class="w-full p-4 mb-4 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-gray-600 transition duration-300 ease-in-out animate-bounce-in">
+                class="w-full p-3 sm:p-4 mb-4 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-gray-600 transition duration-300 ease-in-out animate-bounce-in">
             <input type="date" name="date" placeholder="Enter event date"
-                class="w-full p-4 mb-4 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-gray-600 transition duration-300 ease-in-out animate-bounce-in">
+                class="w-full p-3 sm:p-4 mb-4 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-gray-600 transition duration-300 ease-in-out animate-bounce-in">
             <textarea name="detail" placeholder="Enter event detail"
-                class="resize-none w-full p-4 mb-4 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-gray-600 transition duration-300 ease-in-out h-40 animate-bounce-in"></textarea>
+                class="resize-none w-full p-3 sm:p-4 mb-4 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-gray-600 transition duration-300 ease-in-out h-32 sm:h-40 animate-bounce-in"></textarea>
             <input type="submit" value="CREATE"
-                class="w-full bg-purple-500 text-white p-4 rounded-lg hover:bg-purple-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in">
+                class="w-full bg-purple-500 text-white p-3 sm:p-4 rounded-lg hover:bg-purple-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in">
         </form>
     </div>
+
+    
     <div
         class="w-half bg-purple-500 text-white p-4 rounded-lg hover:bg-purple-600 transition duration-300 ease-in-out cursor-pointer animate-fade-in">
         <a href="/event">EVENTS</a>
